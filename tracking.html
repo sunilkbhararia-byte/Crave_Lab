@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Track Order - CraveLab</title>
+  <link rel="stylesheet" href="css/tracking.css" />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- 🎉 CONFETTI -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">
+      <img src="round logo.png" alt="round logo" class="logo-icon">
+      <span class="logo-text">Crave<span>Lab</span></span>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html" class="active">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="shop.html">Shop</a>
+      <a href="bake.html">DessertLab</a>
+      <a href="cravewise.html">CraveWise</a>
+      <a href="moodmuse.html">MoodMuse</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="nav-actions">
+      <button class="btn-icon" onclick="openSearch()" title="Search"><i class="fas fa-search"></i></button>
+      <button class="btn-icon" onclick="openWishlist()" title="Wishlist"><i class="fas fa-heart"></i></button>
+      <button class="btn-icon" onclick="toggleCart()" title="Cart">
+        <i class="fas fa-shopping-bag"></i>
+        <span class="cart-badge" id="cartBadge">0</span>
+      </button>
+      <button class="btn-login" onclick="openLoginModal()"><i class="fas fa-user"></i> Login</button>
+      <div class="hamburger" id="hamburger" onclick="toggleNav()">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+<div class="tracking-container">
+
+  <h2>🎂 Track Your Order</h2>
+  <p id="orderId"></p>
+
+  <!-- 📦 ORDER ITEMS -->
+  <div class="items-card">
+    <h3>Your Order</h3>
+    <div id="orderItems"></div>
+  </div>
+
+  <!-- STATUS -->
+  <div class="status-card">
+    <h3 id="currentStatus">Preparing your cake...</h3>
+    <p id="eta">Arriving soon</p>
+  </div>
+
+  <!-- PROGRESS -->
+  <div class="progress-bar">
+    <div class="progress-fill" id="progressFill"></div>
+  </div>
+  <div class="progress-labels">
+    <span>Preparing 0–70 sec</span>
+    <span>Out for Delivery 70–120 sec</span>
+    <span>Delivered 120+ sec</span>
+  </div>
+
+  <!-- TIMELINE -->
+  <div class="timeline">
+    <div class="timeline-step" id="step1">
+      <span>🧾</span>
+      <p>Order Placed</p>
+    </div>
+
+    <div class="timeline-step" id="step2">
+      <span>👨‍🍳</span>
+      <p>Preparing</p>
+    </div>
+
+    <div class="timeline-step" id="step3">
+      <span>🚚</span>
+      <p>Out for Delivery</p>
+    </div>
+
+    <div class="timeline-step" id="step4">
+      <span>✅</span>
+      <p>Delivered</p>
+    </div>
+  </div>
+
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="square logo.png" alt="CraveLab Logo" class="footer-logo" />
+      <span class="logo-text">Crave<span>Lab</span></span>
+      <p>A creative dessert platform where customers design their own treats. Bringing sweetness and creativity together, one dessert at a time.</p>
+      <div class="social-links">
+        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+        <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="bake.html">DessertLab</a></li>
+        <li><a href="cravewise.html">CraveWise</a></li>
+        <li><a href="moodmuse.html">MoodMuse</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Support</h4>
+      <ul>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="contact.html#faq">FAQ</a></li>
+        <li><a href="#" onclick="routeOrderTracking(); return false;">Track Your Order</a></li>
+        <li><a href="Cancellation & Refund.pdf">Cancellation & Refund</a></li>
+        <li><a href="Allergen%20Disclaimer.pdf">Allergen Disclaimer</a></li>
+        <li><a href="Privacy%20Policy.pdf">Privacy Policy</a></li>
+        <li><a href="Terms%20%26%20Conditions.pdf">Terms & Conditions</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <div class="footer-contact-item"><span class="icon"><i class="fas fa-map-marker-alt"></i></span><span>CraveLab Studio<br>2nd Floor, Dwaraka Plaza, VIP Road, Siripuram, Vishakhapatnam, Andhra Pradesh - 530003</span></div>
+      <div class="footer-contact-item"><span class="icon"><i class="fas fa-phone"></i></span><span>+91 90000 12345</span></div>
+      <div class="footer-contact-item"><span class="icon"><i class="fas fa-envelope"></i></span><span>hello@cravelab.com</span></div>
+      <div class="footer-contact-item"><span class="icon"><i class="fas fa-clock"></i></span><span>Mon–Sat: 9am – 9pm</span></div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 CraveLab. All rights reserved. Made with ❤️ in India.</p>
+    <div class="footer-bottom-links">
+      <a href="Privacy%20Policy.pdf">Privacy Policy</a>
+      <a href="Terms%20%26%20Conditions.pdf">Terms</a>
+      <a href="#">Shipping</a>
+    </div>
+  </div>
+</footer>
+
+<script src="tracking.js"></script>
+
+</body>
+</html>

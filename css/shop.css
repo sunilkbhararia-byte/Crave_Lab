@@ -1,0 +1,642 @@
+﻿/* =========================================
+   CraveLab - Shop Page Styles
+========================================= */
+
+.shop-hero {
+  background: linear-gradient(135deg, #fff0f5, var(--cream));
+  padding: 3rem 0 2rem;
+  text-align: center;
+  border-bottom: 1px solid rgba(166, 123, 91, 0.1);
+}
+
+.shop-hero h1 { font-size: 2.5rem; color: var(--espresso); margin-bottom: 0.5rem; }
+.shop-hero p { color: var(--gray); font-size: 1rem; }
+
+/* Filter Bar */
+.shop-filter-bar {
+  position: sticky;
+  top: 70px;
+  z-index: 100;
+  background: white;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(166, 123, 91, 0.12);
+  box-shadow: 0 2px 8px rgba(44, 33, 24, 0.05);
+}
+
+.filter-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.filter-tabs {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  flex: 1;
+  scrollbar-width: none;
+}
+
+.filter-tabs::-webkit-scrollbar { display: none; }
+
+.filter-tab {
+  padding: 0.65rem 1.1rem;
+  border: 1.8px solid rgba(166, 123, 91, 0.4);
+  background: white;
+  border-radius: 999px;
+  font-size: 0.92rem;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  color: var(--espresso);
+  transition: var(--transition);
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+}
+
+.filter-tab:hover, .filter-tab.active {
+  background: linear-gradient(135deg, var(--pink), #e8849b);
+  border-color: var(--pink);
+  color: white;
+  box-shadow: 0 8px 18px rgba(244, 167, 185, 0.35);
+}
+
+.sort-select {
+  padding: 0.5rem 1rem;
+  border: 1.5px solid rgba(166, 123, 91, 0.2);
+  border-radius: 50px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--espresso);
+  font-family: 'Poppins', sans-serif;
+  background: white;
+  outline: none;
+}
+
+/* Shop Layout */
+.shop-layout {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: auto;
+  padding: 2rem;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+@media (max-width: 960px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Sidebar */
+.shop-sidebar {
+  position: sticky;
+  top: 120px;
+  align-self: start;
+  height: fit-content;
+  max-width: 220px;
+}
+
+.sidebar-section {
+  margin-bottom: 1.8rem;
+}
+
+.sidebar-section h4 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--espresso);
+  margin-bottom: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.price-range-inputs {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.price-range-inputs input {
+  flex: 1;
+  padding: 0.35rem 0.45rem;
+  border: 1.2px solid rgba(166, 123, 91, 0.2);
+  border-radius: 6px;
+  font-size: 0.78rem;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  outline: none;
+  min-width: 60px;
+}
+
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.checkbox-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  color: var(--espresso);
+}
+
+.checkbox-item input[type="checkbox"] {
+  accent-color: var(--pink);
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+}
+
+/* Product Section */
+.shop-main {
+  min-width: 0;
+}
+
+.shop-section {
+  margin-bottom: 4rem;
+}
+
+.shop-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid rgba(244, 167, 185, 0.2);
+}
+
+.shop-section-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.5rem;
+  color: var(--espresso);
+}
+
+.shop-section-title .emoji {
+  font-size: 1.8rem;
+}
+
+.shop-section-count {
+  font-size: 0.82rem;
+  color: var(--gray);
+  background: var(--cream);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+/* Size selector in modal */
+.size-selector {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 0.4rem;
+}
+
+.size-btn {
+  padding: 0.4rem 0.9rem;
+  border: 1.5px solid rgba(166, 123, 91, 0.25);
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  font-family: 'Poppins', sans-serif;
+  background: white;
+  color: var(--espresso);
+}
+
+.size-btn:hover, .size-btn.selected {
+  background: var(--pink);
+  border-color: var(--pink);
+  color: white;
+}
+
+/* Product detail modal */
+.product-modal .modal-box {
+  max-width: 680px;
+  padding: 0;
+  overflow: hidden;
+}
+
+.product-modal-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.product-modal-img {
+  height: 400px;
+  background: linear-gradient(135deg, #fce4ec, #ffe0b2);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 8rem;
+  overflow: hidden;
+}
+
+.product-modal-info {
+  padding: 2rem;
+  overflow-y: auto;
+  max-height: 500px;
+}
+
+.product-modal-info h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--espresso);
+}
+
+.product-modal-price {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--espresso);
+  margin: 0.8rem 0;
+}
+
+.product-modal-info .product-desc {
+  font-size: 0.88rem;
+  color: var(--gray);
+  line-height: 1.7;
+  margin-bottom: 1.2rem;
+}
+
+/* Ingredients & Allergens */
+.ingredients-section {
+  margin: 1rem 0;
+}
+
+.ingredients-section h4 {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--espresso);
+  margin-bottom: 0.5rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.ingredient-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.ingredient-tag {
+  padding: 0.25rem 0.7rem;
+  background: rgba(244, 167, 185, 0.1);
+  border: 1px solid rgba(244, 167, 185, 0.3);
+  border-radius: 20px;
+  font-size: 0.75rem;
+  color: var(--espresso);
+  font-weight: 500;
+}
+
+.allergen-tag {
+  padding: 0.25rem 0.7rem;
+  background: rgba(255, 152, 0, 0.1);
+  border: 1px solid rgba(255, 152, 0, 0.3);
+  border-radius: 20px;
+  font-size: 0.75rem;
+  color: #e65100;
+  font-weight: 600;
+}
+
+.allergen-warning {
+  background: rgba(255, 152, 0, 0.08);
+  border: 1px solid rgba(255, 152, 0, 0.2);
+  border-radius: 8px;
+  padding: 0.6rem 0.9rem;
+  font-size: 0.78rem;
+  color: #e65100;
+  margin-top: 0.6rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Feedback Section in Product Modal */
+.review-section {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(166, 123, 91, 0.1);
+}
+
+.review-section h4 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--espresso);
+  margin-bottom: 1rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.review-item {
+  padding: 0.8rem 0;
+  border-bottom: 1px solid rgba(166, 123, 91, 0.08);
+}
+
+.review-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 0.4rem;
+}
+
+.review-author {
+  font-weight: 600;
+  font-size: 0.82rem;
+}
+
+.review-stars {
+  color: #fbbf24;
+  font-size: 0.75rem;
+}
+
+.review-text {
+  font-size: 0.82rem;
+  color: var(--gray);
+  line-height: 1.6;
+}
+
+/* =====================================
+   DESSERT PLATTER MODAL STYLES
+===================================== */
+
+.platter-opening {
+  border-bottom: 1px solid rgba(244, 167, 185, 0.2);
+}
+
+.platter-opening-img {
+  min-height: 360px;
+}
+
+.platter-opening-info {
+  max-height: none;
+  overflow-y: visible;
+}
+
+.platter-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid rgba(244, 167, 185, 0.2);
+  background: linear-gradient(135deg, rgba(244, 167, 185, 0.05), rgba(160, 123, 91, 0.05));
+}
+
+.platter-header h2 {
+  color: var(--espresso);
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.platter-header p {
+  margin-top: 0.3rem;
+  color: var(--gray);
+}
+
+.platter-info-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1.5rem;
+}
+
+.platter-info-image {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+}
+
+.platter-info-details {
+  flex: 1;
+  min-width: 220px;
+}
+
+.platter-info-details h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1.3rem;
+  color: var(--espresso);
+}
+
+.platter-info-details p {
+  margin: 0 0 0.8rem;
+  color: var(--gray);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.platter-info-meta {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.6rem;
+  font-size: 0.88rem;
+  color: var(--espresso);
+}
+
+.platter-default-checkbox {
+  padding: 0 1.5rem 1rem;
+}
+
+.platter-default-checkbox label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  color: var(--espresso);
+}
+
+.platter-default-checkbox input {
+  width: 16px;
+  height: 16px;
+}
+
+.platter-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.platter-section {
+  background: var(--cream);
+  border-radius: var(--radius-sm);
+  padding: 1rem;
+  border: 1px solid rgba(244, 167, 185, 0.15);
+}
+
+.platter-section-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--espresso);
+  margin-bottom: 0.8rem;
+  margin: 0 0 0.8rem 0;
+}
+
+.platter-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.platter-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.7rem;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid rgba(160, 123, 91, 0.1);
+  transition: all 0.2s ease;
+}
+
+.platter-item:hover {
+  border-color: rgba(244, 167, 185, 0.3);
+  box-shadow: 0 2px 8px rgba(244, 167, 185, 0.1);
+}
+
+.platter-item-info {
+  flex: 1;
+}
+
+.platter-item-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--espresso);
+  margin-bottom: 0.2rem;
+}
+
+.platter-item-price {
+  font-size: 0.8rem;
+  color: var(--pink);
+  font-weight: 700;
+}
+
+.platter-item-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(244, 167, 185, 0.05);
+  border-radius: 6px;
+  padding: 0.3rem 0.5rem;
+}
+
+.platter-btn-remove,
+.platter-btn-add {
+  width: 28px;
+  height: 28px;
+  border: none;
+  background: var(--pink);
+  color: white;
+  border-radius: 4px;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.platter-btn-remove:hover,
+.platter-btn-add:hover {
+  background: var(--caramel);
+  transform: scale(1.05);
+}
+
+.platter-btn-remove:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.platter-qty {
+  min-width: 24px;
+  text-align: center;
+  font-weight: 700;
+  color: var(--espresso);
+  font-size: 0.9rem;
+}
+
+.platter-default-option {
+  padding: 0 1.5rem;
+}
+
+.platter-summary {
+  padding: 1.5rem;
+  background: linear-gradient(135deg, rgba(244, 167, 185, 0.08), rgba(160, 123, 91, 0.05));
+  border-top: 1px solid rgba(244, 167, 185, 0.2);
+  border-radius: var(--radius-sm);
+  margin: 0 1.5rem 1.5rem;
+}
+
+.platter-items-summary h4 {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--espresso);
+  margin-bottom: 0.7rem;
+  margin: 0 0 0.7rem 0;
+}
+
+.platter-selected-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(244, 167, 185, 0.2);
+}
+
+.platter-selected-item {
+  font-size: 0.8rem;
+  color: var(--gray);
+  padding: 0.3rem 0;
+}
+
+.platter-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+  color: var(--espresso);
+}
+
+.platter-price-amount {
+  font-size: 1.2rem;
+  color: var(--pink);
+}
+
+.btn-default-platter:hover {
+  background: rgba(244, 167, 185, 0.2) !important;
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .shop-layout { grid-template-columns: 1fr; }
+  .shop-sidebar { position: static; }
+  .product-modal-grid { grid-template-columns: 1fr; }
+  .product-modal-img { height: 200px; }
+}
+
+@media (max-width: 768px) {
+  .shop-layout { padding: 1rem; }
+}

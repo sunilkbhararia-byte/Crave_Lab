@@ -1,0 +1,90 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #fff8f5;
+  margin: 0;
+}
+
+.tracking-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+h2 {
+  text-align: center;
+}
+
+/* 📦 ITEMS CARD */
+.items-card {
+  background: white;
+  padding: 15px;
+  border-radius: 15px;
+  margin-top: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 0;
+}
+
+/* STATUS */
+.status-card {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  margin-top: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+/* PROGRESS */
+.progress-bar {
+  height: 8px;
+  background: #eee;
+  border-radius: 10px;
+  margin: 25px 0;
+  display: none;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #ff7a7a, #ffb86c);
+  transition: width 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.progress-labels {
+  display: none;
+}
+
+.progress-labels span {
+  flex: 1;
+  text-align: center;
+  background: #fff2e8;
+  padding: 8px 10px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 122, 122, 0.15);
+}
+
+/* TIMELINE */
+.timeline {
+  display: flex;
+  justify-content: space-between;
+}
+
+.timeline-step {
+  text-align: center;
+  opacity: 0.4;
+  transition: 0.3s;
+}
+
+.timeline-step span {
+  font-size: 24px;
+}
+
+.timeline-step.active {
+  opacity: 1;
+  transform: scale(1.1);
+}
